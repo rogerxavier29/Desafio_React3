@@ -2,37 +2,33 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Imagens from '../Imagens/undraw_environmental_study_skau 1.svg';
 
-import {
-  DivGeral,
-  Image,
-  Titulo,
-  CheckBoxs,
-  LinkSenha,
-  BtnEntrar,
-  Box,
-} from './styles';
+import { DivGeral, Image, Titulo, DivSenha } from './styles';
 
 const Aluno = () => {
   return (
     <DivGeral>
       <Titulo>Meu Portal</Titulo>
       <form>
-        <CheckBoxs>
+        <section>
           <li>
-            <input id="1" type="checkbox" />
-            Estudante
+            <input type="checkbox" />
+            <label htmlFor="">Estudante</label>
           </li>
           <li>
-            <input id="2" type="checkbox" />
-            Professor
+            <input type="checkbox" />
+            <label>Professor</label>
           </li>
-        </CheckBoxs>
-        <input name="Email" type="text" />
-        <input name="Senha" type="text" />
-        <LinkSenha>
-          <Link to="">Esqueci Senha</Link>
-        </LinkSenha>
-        <BtnEntrar>Entrar</BtnEntrar>
+        </section>
+        <div>
+          <label>Email</label>
+          <input type="text" />
+          <label>Senha</label>
+          <input type="text" />
+          <DivSenha>
+            <Link to="/Senha">Esqueci Senha</Link>
+          </DivSenha>
+          <button>Entrar</button>
+        </div>
       </form>
       <Image>
         <img src={Imagens} />
