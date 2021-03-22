@@ -13,41 +13,36 @@ export const DivGeral = styled.div`
     margin-top: 30px;
     z-index: 10;
     position: absolute;
-    input {
-      width: 250px;
-      height: 30px;
-      margin-left: 130px;
-      margin-top: 40px;
-      border-radius: 3px;
+    section {
+      display: flex;
+      justify-content: center;
+      li {
+        margin: 30px;
+      }
+    }
+    div {
+      display: grid;
+      justify-content: center;
+      input {
+        margin: 10px;
+        width: 270px;
+        height: 30px;
+        border-radius: 4px;
+      }
+      button {
+        margin: 20px 55px;
+        width: 200px;
+        height: 34px;
+        border-radius: 4px;
+      }
     }
   }
 `;
 
-export const CheckBoxs = styled.ul`
-  display: flex;
-  justify-content: center;
-  li {
-    margin-left: -100px;
-    input {
-      width: 20px;
-      margin-top: 20px;
-    }
-  }
-`;
-
-export const LinkSenha = styled.section`
-  margin-top: 7px;
-  margin-left: 300px;
-  font-size: 13px;
-  color: #6959cd;
-`;
-
-export const BtnEntrar = styled.button`
-  width: 200px;
-  height: 40px;
-  margin-left: 160px;
-  margin-top: 20px;
-  border-radius: 7px;
+export const DivSenha = styled.div`
+  margin: -3px 25px;
+  justify-self: self-end;
+  font-size: 14px;
   color: #6959cd;
 `;
 
