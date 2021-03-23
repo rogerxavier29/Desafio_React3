@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const DivGeral = styled.div`
-  background: silver;
+  background: #dcdcdc;
   width: 100%;
   height: 100vh;
   padding-top: 0.5px;
@@ -29,6 +29,7 @@ export const DivGeral = styled.div`
         height: 30px;
         border-radius: 4px;
       }
+
       button {
         margin: 20px 55px;
         width: 200px;
