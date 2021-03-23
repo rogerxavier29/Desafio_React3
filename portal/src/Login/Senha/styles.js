@@ -24,7 +24,33 @@ export const Form = styled.form`
     display: flex;
     justify-content: center;
     li {
-      margin: 40px;
+      margin: 20px;
+    }
+  }
+  div {
+    display: grid;
+    justify-content: center;
+    label {
+      justify-self: self-start;
+      padding-left: 8px;
+      font-size: 14px;
+    }
+    input {
+      width: 300px;
+      height: 38px;
+      border-radius: 4px;
+      border: groove;
+      margin: 5px;
+    }
+    button {
+      width: 300px;
+      height: 38px;
+      margin: 10px;
+      border-radius: 4px;
+      border: groove;
+      background: #fff;
+      color: #6959cd;
+      font-weight: bold;
     }
   }
 `;
