@@ -19,6 +19,18 @@ const Senha = () => {
             <label htmlFor="">Professor</label>
           </li>
         </section>
+        <div>
+          <label htmlFor="">Email</label>
+          <input type="text" placeholder="Email" />
+
+          <label htmlFor="">CPF</label>
+          <input type="text" placeholder="CPF" />
+
+          <label htmlFor="">Nova Senha</label>
+          <input type="text" placeholder="Nova Senha" />
+
+          <button>Redefinir Senha</button>
+        </div>
       </Form>
       <Imagem>
         <img src={Imagens} alt="" />
