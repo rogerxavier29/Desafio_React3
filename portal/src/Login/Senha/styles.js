@@ -20,6 +20,13 @@ export const Form = styled.form`
   background: #fff;
   justify-self: center;
   z-index: 10;
+  section {
+    display: flex;
+    justify-content: center;
+    li {
+      margin: 40px;
+    }
+  }
 `;
 
 export const Imagem = styled.div`
