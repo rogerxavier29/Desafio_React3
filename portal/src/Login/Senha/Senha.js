@@ -1,8 +1,10 @@
 import React from 'react';
 
+import { DivGeral } from './styles';
+
 const Senha = () => {
   return (
-    <div>
+    <DivGeral>
       <h1>Esqueci Senha</h1>
       <form>
         <section>
@@ -16,7 +18,7 @@ const Senha = () => {
           </li>
         </section>
       </form>
-    </div>
+    </DivGeral>
   );
 };
 
