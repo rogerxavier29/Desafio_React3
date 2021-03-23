@@ -1,12 +1,14 @@
 import React from 'react';
 
-import { DivGeral } from './styles';
+import { DivGeral, Titulo, Form, Imagem } from './styles';
+
+import Imagens from '../../Imagens/undraw_environmental_study_skau 1.svg';
 
 const Senha = () => {
   return (
     <DivGeral>
-      <h1>Esqueci Senha</h1>
-      <form>
+      <Titulo>Esqueci Senha</Titulo>
+      <Form>
         <section>
           <li>
             <input type="checkbox" />
@@ -17,7 +19,10 @@ const Senha = () => {
             <label htmlFor="">Professor</label>
           </li>
         </section>
-      </form>
+      </Form>
+      <Imagem>
+        <img src={Imagens} alt="" />
+      </Imagem>
     </DivGeral>
   );
 };
