@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import HomeAluno from '../HomeAluno/HomeAluno';
 
 import Aluno from '../Login/Aluno';
 import Senha from '../Login/Senha/Senha';
+import HomeAluno from '../HomeAluno/HomeAluno';
+import Header from '../Header/Header';
 
 const Rotas = () => {
   return (
@@ -11,7 +12,8 @@ const Rotas = () => {
       <Switch>
         <Route path="/aluno" component={Aluno} />
         <Route path="/senha" component={Senha} />
-        <Route path="/HomeAluno" component={HomeAluno} />
+        <Header />
+        <Route path="/homealuno" component={HomeAluno} />
       </Switch>
     </BrowserRouter>
   );
