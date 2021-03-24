@@ -22,6 +22,18 @@ export const Section1 = styled.section`
     margin: 15px;
     border-radius: 3px;
     background: #dcdcdc;
+    cursor: pointer;
+    p {
+      padding-top: 10px;
+      margin: 10px;
+      font-size: 18px;
+    }
+    span {
+      margin: 10px;
+      color: gray;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
   }
 `;
 
@@ -32,6 +44,18 @@ export const Section2 = styled.section`
     margin: 15px;
     border-radius: 3px;
     background: #dcdcdc;
+    cursor: pointer;
+    p {
+      padding-top: 10px;
+      margin: 10px;
+      font-size: 18px;
+    }
+    span {
+      margin: 10px;
+      color: gray;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
   }
 `;
 
@@ -42,5 +66,17 @@ export const Section3 = styled.section`
     margin: 15px;
     border-radius: 3px;
     background: #dcdcdc;
+    cursor: pointer;
+    p {
+      padding-top: 10px;
+      margin: 10px;
+      font-size: 18px;
+    }
+    span {
+      margin: 10px;
+      color: gray;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
   }
 `;
