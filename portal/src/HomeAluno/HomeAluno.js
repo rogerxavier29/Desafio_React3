@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../Header/Header';
 
 import {
@@ -17,58 +18,93 @@ const HomeAluno = () => {
       <Titulo>Disciplinas:</Titulo>
       <Container>
         <Section1>
-          <div>
-            <p>Português</p>
-            <span>Turma 345</span>
-          </div>
-          <div>
-            <p>Português</p>
-            <span>Turma 345</span>
-          </div>
-          <div>
-            <p>Português</p>
-            <span>Turma 345</span>
-          </div>
-          <div>
-            <p>Português</p>
-            <span>Turma 345</span>
-          </div>
+          <Link to="/homealuno/turma">
+            <div>
+              <p>Português</p>
+              <span>Turma 345</span>
+            </div>
+          </Link>
+
+          <Link to="/homealuno/turma">
+            <div>
+              <p>Português</p>
+              <span>Turma 345</span>
+            </div>
+          </Link>
+
+          <Link to="/homealuno/turma">
+            <div>
+              <p>Português</p>
+              <span>Turma 345</span>
+            </div>
+          </Link>
+
+          <Link to="/homealuno/turma">
+            <div>
+              <p>Português</p>
+              <span>Turma 345</span>
+            </div>
+          </Link>
         </Section1>
+
         <Section2>
-          <div>
-            <p>Português</p>
-            <span>Turma 345</span>
-          </div>
-          <div>
-            <p>Português</p>
-            <span>Turma 345</span>
-          </div>
-          <div>
-            <p>Português</p>
-            <span>Turma 345</span>
-          </div>
-          <div>
-            <p>Português</p>
-            <span>Turma 345</span>
-          </div>
+          <Link to="/homealuno/turma">
+            <div>
+              <p>Português</p>
+              <span>Turma 345</span>
+            </div>
+          </Link>
+
+          <Link to="/homealuno/turma">
+            <div>
+              <p>Português</p>
+              <span>Turma 345</span>
+            </div>
+          </Link>
+
+          <Link to="/homealuno/turma">
+            <div>
+              <p>Português</p>
+              <span>Turma 345</span>
+            </div>
+          </Link>
+
+          <Link to="/homealuno/turma">
+            <div>
+              <p>Português</p>
+              <span>Turma 345</span>
+            </div>
+          </Link>
         </Section2>
+
         <Section3>
-          <div>
-            <p>Português</p>
-            <span>Turma 345</span>
-          </div>
-          <div>
-            <p>Português</p>
-            <span>Turma 345</span>
-          </div>
-          <div>
-            <p>Português</p>
-            <span>Turma 345</span>
-          </div>
-          <div>
-            <p>Português</p>
-            <span>Turma 345</span>
-          </div>
+          <Link to="/homealuno/turma">
+            <div>
+              <p>Português</p>
+              <span>Turma 345</span>
+            </div>
+          </Link>
+
+          <Link to="/homealuno/turma">
+            <div>
+              <p>Português</p>
+              <span>Turma 345</span>
+            </div>
+          </Link>
+
+          <Link to="/homealuno/turma">
+            <div>
+              <p>Português</p>
+              <span>Turma 345</span>
+            </div>
+          </Link>
+
+          <Link to="/homealuno/turma">
+            <div>
+              <p>Português</p>
+              <span>Turma 345</span>
+            </div>
+          </Link>
         </Section3>
       </Container>
     </DivGeral>
