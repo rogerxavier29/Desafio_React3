@@ -1,10 +1,14 @@
 import React from 'react';
+import Header from '../Header/Header';
+
+import { DivGeral, Titulo } from './styles';
 
 const HomeAluno = () => {
   return (
-    <div>
-      <h1>Disciplinas:</h1>
-    </div>
+    <DivGeral>
+      <Header />
+      <Titulo>Disciplinas:</Titulo>
+    </DivGeral>
   );
 };
 
