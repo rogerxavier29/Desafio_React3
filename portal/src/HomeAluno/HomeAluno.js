@@ -17,22 +17,58 @@ const HomeAluno = () => {
       <Titulo>Disciplinas:</Titulo>
       <Container>
         <Section1>
-          <div>Portugues</div>
-          <div>Portugues</div>
-          <div>Portugues</div>
-          <div>Portugues</div>
+          <div>
+            <p>Português</p>
+            <span>Turma 345</span>
+          </div>
+          <div>
+            <p>Português</p>
+            <span>Turma 345</span>
+          </div>
+          <div>
+            <p>Português</p>
+            <span>Turma 345</span>
+          </div>
+          <div>
+            <p>Português</p>
+            <span>Turma 345</span>
+          </div>
         </Section1>
         <Section2>
-          <div>Portugues</div>
-          <div>Portugues</div>
-          <div>Portugues</div>
-          <div>Portugues</div>
+          <div>
+            <p>Português</p>
+            <span>Turma 345</span>
+          </div>
+          <div>
+            <p>Português</p>
+            <span>Turma 345</span>
+          </div>
+          <div>
+            <p>Português</p>
+            <span>Turma 345</span>
+          </div>
+          <div>
+            <p>Português</p>
+            <span>Turma 345</span>
+          </div>
         </Section2>
         <Section3>
-          <div>Portugues</div>
-          <div>Portugues</div>
-          <div>Portugues</div>
-          <div>Portugues</div>
+          <div>
+            <p>Português</p>
+            <span>Turma 345</span>
+          </div>
+          <div>
+            <p>Português</p>
+            <span>Turma 345</span>
+          </div>
+          <div>
+            <p>Português</p>
+            <span>Turma 345</span>
+          </div>
+          <div>
+            <p>Português</p>
+            <span>Turma 345</span>
+          </div>
         </Section3>
       </Container>
     </DivGeral>
