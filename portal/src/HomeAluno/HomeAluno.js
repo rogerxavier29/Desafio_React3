@@ -18,28 +18,28 @@ const HomeAluno = () => {
       <Titulo>Disciplinas:</Titulo>
       <Container>
         <Section1>
-          <Link to="/homealuno/turma">
+          <Link to="/notaconteudo">
             <div>
               <p>Português</p>
               <span>Turma 345</span>
             </div>
           </Link>
 
-          <Link to="/homealuno/turma">
+          <Link to="/notaconteudo">
             <div>
               <p>Português</p>
               <span>Turma 345</span>
             </div>
           </Link>
 
-          <Link to="/homealuno/turma">
+          <Link to="/notaconteudo">
             <div>
               <p>Português</p>
               <span>Turma 345</span>
             </div>
           </Link>
 
-          <Link to="/homealuno/turma">
+          <Link to="/notaconteudo">
             <div>
               <p>Português</p>
               <span>Turma 345</span>
@@ -48,28 +48,28 @@ const HomeAluno = () => {
         </Section1>
 
         <Section2>
-          <Link to="/homealuno/turma">
+          <Link to="/notaconteudo">
             <div>
               <p>Português</p>
               <span>Turma 345</span>
             </div>
           </Link>
 
-          <Link to="/homealuno/turma">
+          <Link to="/notaconteudo">
             <div>
               <p>Português</p>
               <span>Turma 345</span>
             </div>
           </Link>
 
-          <Link to="/homealuno/turma">
+          <Link to="/notaconteudo">
             <div>
               <p>Português</p>
               <span>Turma 345</span>
             </div>
           </Link>
 
-          <Link to="/homealuno/turma">
+          <Link to="/notaconteudo">
             <div>
               <p>Português</p>
               <span>Turma 345</span>
@@ -78,28 +78,28 @@ const HomeAluno = () => {
         </Section2>
 
         <Section3>
-          <Link to="/homealuno/turma">
+          <Link to="/notaconteudo">
             <div>
               <p>Português</p>
               <span>Turma 345</span>
             </div>
           </Link>
 
-          <Link to="/homealuno/turma">
+          <Link to="/notaconteudo">
             <div>
               <p>Português</p>
               <span>Turma 345</span>
             </div>
           </Link>
 
-          <Link to="/homealuno/turma">
+          <Link to="/notaconteudo">
             <div>
               <p>Português</p>
               <span>Turma 345</span>
             </div>
           </Link>
 
-          <Link to="/homealuno/turma">
+          <Link to="/notaconteudo">
             <div>
               <p>Português</p>
               <span>Turma 345</span>
