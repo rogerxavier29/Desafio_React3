@@ -17,7 +17,9 @@ const NotaConteudo = () => {
       <SubDiv>
         <Section1>
           <div>
-            <p>Linguagem Estruturada</p>
+            <Link to="/apresentconteudo">
+              <p>Linguagem Estruturada</p>
+            </Link>
           </div>
           <div>
             <p>Linguagem Estruturada</p>
