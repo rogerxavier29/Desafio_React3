@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../../Header/Header';
 import { Link } from 'react-router-dom';
 
-import { DivGeral, Linky, Titulo } from './styles';
+import { DivGeral, Linky, Titulo, SubDiv, Section1, Section2 } from './styles';
 
 const NotaConteudo = () => {
   return (
@@ -14,6 +14,11 @@ const NotaConteudo = () => {
         </Link>
       </Linky>
       <Titulo>Português - Turma 345</Titulo>
+      <SubDiv>
+        <Section1></Section1>
+
+        <Section2></Section2>
+      </SubDiv>
     </DivGeral>
   );
 };
