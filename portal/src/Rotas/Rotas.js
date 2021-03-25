@@ -5,6 +5,7 @@ import Aluno from '../Login/Aluno';
 import Senha from '../Login/Senha/Senha';
 import HomeAluno from '../HomeAluno/HomeAluno';
 import NotaConteudo from '../HomeAluno/NotaConteudo/NotaConteudo';
+import ApresentacaoConteudo from '../Conteudo/ApresentacaoConteudo';
 
 const Rotas = () => {
   return (
@@ -14,6 +15,7 @@ const Rotas = () => {
         <Route path="/senha" component={Senha} />
         <Route path="/homealuno" component={HomeAluno} />
         <Route path="/notaconteudo" component={NotaConteudo} />
+        <Route path="/apresentconteudo" component={ApresentacaoConteudo} />
       </Switch>
     </BrowserRouter>
   );
