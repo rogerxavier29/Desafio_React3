@@ -50,4 +50,14 @@ export const Section2 = styled.section`
   width: 1050px;
   height: 180px;
   border-style: groove;
+  display: flex;
+  justify-content: space-around;
+  div {
+    width: 100px;
+    height: 100px;
+    border-style: groove;
+    border-radius: 3px;
+    margin: 20px;
+    background: #dcdcdc;
+  }
 `;
