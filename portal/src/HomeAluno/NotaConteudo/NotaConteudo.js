@@ -15,7 +15,20 @@ const NotaConteudo = () => {
       </Linky>
       <Titulo>Português - Turma 345</Titulo>
       <SubDiv>
-        <Section1></Section1>
+        <Section1>
+          <div>
+            <p>Linguagem Estruturada</p>
+          </div>
+          <div>
+            <p>Linguagem Estruturada</p>
+          </div>
+          <div>
+            <p>Linguagem Estruturada</p>
+          </div>
+          <div>
+            <p>Linguagem Estruturada</p>
+          </div>
+        </Section1>
 
         <Section2></Section2>
       </SubDiv>
