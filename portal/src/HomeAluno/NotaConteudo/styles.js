@@ -18,6 +18,7 @@ export const Linky = styled.div`
 export const Titulo = styled.h1`
   margin: 25px;
   font-size: 25px;
+  cursor: pointer;
 `;
 
 export const SubDiv = styled.div`
@@ -30,7 +31,9 @@ export const SubDiv = styled.div`
 export const Section1 = styled.section`
   width: 1050px;
   height: 180px;
-  border-style: groove;
+  border-style: solid;
+  border-color: #6495ed;
+  border-radius: 3px;
   display: flex;
   justify-content: space-around;
   padding-top: 20px;
@@ -39,6 +42,7 @@ export const Section1 = styled.section`
     height: 130px;
     border-style: groove;
     border-radius: 6px;
+    cursor: pointer;
     p {
       margin: 20px;
       font-size: 18px;
@@ -49,15 +53,23 @@ export const Section1 = styled.section`
 export const Section2 = styled.section`
   width: 1050px;
   height: 180px;
-  border-style: groove;
+  border-style: solid;
+  border-color: #6495ed;
+  border-radius: 3px;
   display: flex;
   justify-content: space-around;
   div {
-    width: 100px;
-    height: 100px;
+    width: 105px;
+    height: 105px;
     border-style: groove;
-    border-radius: 3px;
+    border-radius: 6px;
     margin: 20px;
     background: #dcdcdc;
+    cursor: pointer;
+    p {
+      margin: 5px;
+      font-size: 14px;
+      font-weight: bold;
+    }
   }
 `;
