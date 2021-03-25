@@ -31,6 +31,19 @@ export const Section1 = styled.section`
   width: 1050px;
   height: 180px;
   border-style: groove;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+  div {
+    width: 130px;
+    height: 130px;
+    border-style: groove;
+    border-radius: 6px;
+    p {
+      margin: 20px;
+      font-size: 18px;
+    }
+  }
 `;
 
 export const Section2 = styled.section`
