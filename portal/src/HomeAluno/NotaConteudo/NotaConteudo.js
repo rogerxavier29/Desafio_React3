@@ -30,7 +30,28 @@ const NotaConteudo = () => {
           </div>
         </Section1>
 
-        <Section2></Section2>
+        <Section2>
+          <div>
+            <p>Trabalho 1</p>
+            <p>Peso 2.0</p>
+            <p>Nota 10</p>
+          </div>
+          <div>
+            <p>Trabalho 1</p>
+            <p>Peso 2.0</p>
+            <p>Nota 10</p>
+          </div>
+          <div>
+            <p>Trabalho 1</p>
+            <p>Peso 2.0</p>
+            <p>Nota 10</p>
+          </div>
+          <div>
+            <p>Trabalho 1</p>
+            <p>Peso 2.0</p>
+            <p>Nota 10</p>
+          </div>
+        </Section2>
       </SubDiv>
     </DivGeral>
   );
