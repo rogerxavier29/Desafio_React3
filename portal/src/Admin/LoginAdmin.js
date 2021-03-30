@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { DivGeral } from './styles';
+import { DivGeral, Titulo } from './styles';
 
 const LoginAdmin = () => {
   return (
     <DivGeral>
-      <h1>Portal do Administrador</h1>
+      <Titulo>Portal do Administrador</Titulo>
     </DivGeral>
   );
 };
