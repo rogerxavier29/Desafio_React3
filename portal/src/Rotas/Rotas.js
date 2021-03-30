@@ -6,6 +6,7 @@ import Senha from '../Login/Senha/Senha';
 import HomeAluno from '../HomeAluno/HomeAluno';
 import NotaConteudo from '../HomeAluno/NotaConteudo/NotaConteudo';
 import ApresentacaoConteudo from '../Conteudo/ApresentacaoConteudo';
+import LoginAdmin from '../Admin/LoginAdmin';
 
 const Rotas = () => {
   return (
@@ -16,6 +17,7 @@ const Rotas = () => {
         <Route path="/homealuno" component={HomeAluno} />
         <Route path="/notaconteudo" component={NotaConteudo} />
         <Route path="/apresentconteudo" component={ApresentacaoConteudo} />
+        <Route path="/Loginadmin" component={LoginAdmin} />
       </Switch>
     </BrowserRouter>
   );
