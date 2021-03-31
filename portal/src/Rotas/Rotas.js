@@ -7,6 +7,7 @@ import HomeAluno from '../HomeAluno/HomeAluno';
 import NotaConteudo from '../HomeAluno/NotaConteudo/NotaConteudo';
 import ApresentacaoConteudo from '../Conteudo/ApresentacaoConteudo';
 import LoginAdmin from '../Admin/LoginAdmin';
+import SenhaAdmin from '../Admin/Senha/SenhaAdmin';
 
 const Rotas = () => {
   return (
@@ -18,6 +19,7 @@ const Rotas = () => {
         <Route path="/notaconteudo" component={NotaConteudo} />
         <Route path="/apresentconteudo" component={ApresentacaoConteudo} />
         <Route path="/Loginadmin" component={LoginAdmin} />
+        <Route path="/senhaadmin" component={SenhaAdmin} />
       </Switch>
     </BrowserRouter>
   );
