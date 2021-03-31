@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../../Header/Header';
+import CadastroUsuario from '../CadastroUsuario/CadastroUsuario';
+import Modal from 'react-modal';
+import styles from './Modal.module.css';
 
 import {
   DivGeral,
@@ -11,12 +14,21 @@ import {
 } from './styles';
 
 const HomeAdmin = () => {
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <DivGeral>
       <Header />
       <Titulo>Escolha uma das opções abaixo:</Titulo>
       <SectionOptions>
-        <DivUsuario>
+        <Modal
+          className={styles.modal}
+          isOpen={openModal}
+          onRequestClose={() => setOpenModal(false)}
+        >
+          <CadastroUsuario />
+        </Modal>
+        <DivUsuario onClick={() => setOpenModal(true)}>
           <p>Cadastrar novo usuário</p>
         </DivUsuario>
         <DivMatricula>
