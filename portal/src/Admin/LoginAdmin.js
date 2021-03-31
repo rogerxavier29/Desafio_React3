@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Imagens from '../Imagens/undraw_predictive_analytics_kf9n 1.svg';
 import { Link } from 'react-router-dom';
 
@@ -12,17 +12,32 @@ import {
 } from './styles';
 
 const LoginAdmin = () => {
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+
   return (
     <DivGeral>
       <Titulo>Portal do Administrador</Titulo>
       <Form action="">
         <SectionForm>
-          <label htmlFor="">Email</label>
-          <input id="email" type="email" />
+          <label htmlFor="email">Email</label>
+          <input
+            id="email"
+            type="email"
+            placeholder="E-mail"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
           <label htmlFor="senha">Senha</label>
-          <input id="senha" type="text" />
+          <input
+            id="senha"
+            type="password"
+            placeholder="Pelo menos 6 caracteres"
+            value={senha}
+            onChange={(event) => setSenha(event.target.value)}
+          />
           <EsquecSenha>
-            <Link to="">Esqueci Senha</Link>
+            <Link to="/senhaadmin">Esqueci Senha</Link>
           </EsquecSenha>
           <button type="submit">Entrar</button>
         </SectionForm>
