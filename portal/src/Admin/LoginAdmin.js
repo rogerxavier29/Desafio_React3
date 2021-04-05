@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Imagens from '../Imagens/undraw_predictive_analytics_kf9n 1.svg';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import {
   DivGeral,
@@ -15,10 +16,34 @@ const LoginAdmin = () => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    axios
+      .post('https://projetoportal.herokuapp.com/sessions/adm', {
+        email: email,
+        password: senha,
+      })
+      .then(
+        (response) => {
+          if (response.data.token) {
+            sessionStorage.setItem('id', response.data.user.id);
+            sessionStorage.setItem('name', response.data.user.name);
+            sessionStorage.setItem('email', response.data.user.email);
+            sessionStorage.setItem('token', response.data.token);
+            window.location.replace('/homeadmin');
+          }
+        },
+        (error) => {
+          console.log(error);
+        },
+      );
+  }
+
   return (
     <DivGeral>
       <Titulo>Portal do Administrador</Titulo>
-      <Form action="">
+      <Form onSubmit={handleSubmit}>
         <SectionForm>
           <label htmlFor="email">Email</label>
           <input
