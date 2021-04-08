@@ -32,6 +32,7 @@ const MatriculaAluno = () => {
         console.error(error);
       });
   };
+
   return (
     <div>
       <Header />
@@ -40,41 +41,53 @@ const MatriculaAluno = () => {
         <Form onSubmit="">
           <input type="text" placeholder="N° de matrícula aluno" />
           <SectionSelect>
-            <select>
-              <option disabled selected>
-                Disciplinas
-              </option>
-              <option></option>
+            <select id="disciplinas">
+              {disciplinas &&
+                disciplinas.discipline.map(({ _id, name }) => (
+                  <option key={_id} value={_id}>
+                    {name}
+                  </option>
+                ))}
             </select>
-            <select>
-              <option disabled selected>
-                Disciplinas
-              </option>
-              <option value=""></option>
+            <select id="disciplinas">
+              {disciplinas &&
+                disciplinas.discipline.map(({ _id, name }) => (
+                  <option key={_id} value={_id}>
+                    {name}
+                  </option>
+                ))}
             </select>
-            <select>
-              <option disabled selected>
-                Disciplinas
-              </option>
-              <option value=""></option>
+            <select id="disciplinas">
+              {disciplinas &&
+                disciplinas.discipline.map(({ _id, name }) => (
+                  <option key={_id} value={_id}>
+                    {name}
+                  </option>
+                ))}
             </select>
-            <select>
-              <option disabled selected>
-                Disciplinas
-              </option>
-              <option value=""></option>
+            <select id="disciplinas">
+              {disciplinas &&
+                disciplinas.discipline.map(({ _id, name }) => (
+                  <option key={_id} value={_id}>
+                    {name}
+                  </option>
+                ))}
             </select>
-            <select>
-              <option disabled selected>
-                Disciplinas
-              </option>
-              <option value=""></option>
+            <select id="disciplinas">
+              {disciplinas &&
+                disciplinas.discipline.map(({ _id, name }) => (
+                  <option key={_id} value={_id}>
+                    {name}
+                  </option>
+                ))}
             </select>
-            <select>
-              <option disabled selected>
-                Disciplinas
-              </option>
-              <option value=""></option>
+            <select id="disciplinas">
+              {disciplinas &&
+                disciplinas.discipline.map(({ _id, name }) => (
+                  <option key={_id} value={_id}>
+                    {name}
+                  </option>
+                ))}
             </select>
           </SectionSelect>
           <DivBtn>
