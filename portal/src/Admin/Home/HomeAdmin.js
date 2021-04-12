@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../../Header/Header';
 import CadastroUsuario from '../CadastroUsuario/CadastroUsuario';
 import Modal from 'react-modal';
+import FormDisciplinas from '../FormDisciplinas/FormDisciplinas';
 
 import {
   DivGeral,
@@ -11,7 +13,6 @@ import {
   DivMatricula,
   DivDisciplina,
 } from './styles';
-import FormDisciplinas from '../FormDisciplinas/FormDisciplinas';
 
 const styles = {
   content: {
@@ -51,14 +52,16 @@ const HomeAdmin = () => {
           <p>Cadastrar novo usuário</p>
         </DivUsuario>
         <DivMatricula>
-          <p>Matricular Aluno</p>
+          <Link to="/matriculaluno">
+            <p>Matricular Aluno</p>
+          </Link>
         </DivMatricula>
         <Modal
           style={styles2}
           isOpen={openModal2}
           onRequestClose={() => setOpenModal2(false)}
         >
-        <FormDisciplinas />
+          <FormDisciplinas />
         </Modal>
         <DivDisciplina onClick={() => setOpenModal2(true)}>
           <p>Cadastrar nova disciplina</p>
