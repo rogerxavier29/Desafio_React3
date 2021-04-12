@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Imagens from '../Imagens/undraw_environmental_study_skau 1.svg';
+import axios from 'axios';
 
 import { DivGeral, Image, Titulo, DivSenha } from './styles';
 
@@ -9,19 +10,35 @@ const Aluno = () => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    console.log(handleSubmit);
-  }
-
   function handleChange({ target }) {
     setCheckBox(target.value);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    axios
+      .post('https://projetoportal.herokuapp.com/', {
+        email: email,
+        senha: senha,
+        checkbox: checkbox,
+      })
+      .then(
+        (response) => {
+          if (response.data === response.data) {
+            window.location.replace('/homealuno');
+          }
+        },
+        (error) => {
+          console.log(error);
+        },
+      );
   }
 
   return (
     <DivGeral>
       <Titulo>Meu Portal</Titulo>
-      <form action="" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <section>
           <li>
             <input
@@ -43,7 +60,6 @@ const Aluno = () => {
             />
             <label htmlFor="Professor">Professor</label>
           </li>
-          {checkbox}
         </section>
         <div>
           <label htmlFor="email">Email</label>
@@ -55,7 +71,6 @@ const Aluno = () => {
             value={email}
             onChange={(event) => setEmail(event.target.value)}
           />
-          {email}
           <label htmlFor="senha">Senha</label>
           <input
             id="senha"
@@ -65,7 +80,6 @@ const Aluno = () => {
             value={senha}
             onChange={(event) => setSenha(event.target.value)}
           />
-          {senha}
           <DivSenha>
             <Link to="/Senha">Esqueci Senha</Link>
           </DivSenha>
