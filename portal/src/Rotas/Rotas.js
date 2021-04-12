@@ -7,9 +7,9 @@ import HomeAluno from '../HomeAluno/HomeAluno';
 import NotaConteudo from '../HomeAluno/NotaConteudo/NotaConteudo';
 import ApresentacaoConteudo from '../Conteudo/ApresentacaoConteudo';
 import LoginAdmin from '../Admin/LoginAdmin';
-import SenhaAdmin from '../Admin/Senha/SenhaAdmin';
 import HomeAdmin from '../Admin/Home/HomeAdmin';
 import MatriculaAluno from '../Admin/MatriculaAluno/MatriculaAluno';
+import SenhaAdmin from '../Admin/EsqueciSenha/SenhaAdmin';
 
 const Rotas = () => {
   return (
