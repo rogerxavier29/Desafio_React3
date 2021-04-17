@@ -16,15 +16,16 @@ const HomeAluno = () => {
     },
   };
 
+  const idUser = sessionStorage.getItem('id');
+  const usertype = sessionStorage.getItem('checkbox');
+
   useEffect(() => {
     getlistaDisciplinas();
   }, []);
   const getlistaDisciplinas = async () => {
     axios
       .get(
-        `https://projetoportal.herokuapp.com/discipline/${sessionStorage.getItem(
-          '_id',
-        )}/${sessionStorage.getItem('checkbox')}`,
+        `https://projetoportal.herokuapp.com/discipline/${idUser}/${usertype}`,
         options,
       )
       .then((res) => {
@@ -40,19 +41,28 @@ const HomeAluno = () => {
     <DivGeral>
       <Header />
       <Titulo>Disciplinas:</Titulo>
-
       <Section1>
-        <Link to="/notaconteudo">
-          {listaDisciplinas &&
-            listaDisciplinas.userDiscipline[0].disciplines.map(
-              ({ _id, name }) => (
+        {usertype === '2'
+          ? listaDisciplinas &&
+            listaDisciplinas.discipline.map(({ _id, name }) => (
+              <Link to={`/notaconteudo/${_id}/${name}`}>
                 <div>
                   <p key={_id}>{name}</p>
                   <span>Turma 345</span>
                 </div>
+              </Link>
+            ))
+          : listaDisciplinas &&
+            listaDisciplinas.userDiscipline[0].disciplines.map(
+              ({ _id, name }) => (
+                <Link to={`/notaconteudo/${_id}/${name}`}>
+                  <div>
+                    <p key={_id}>{name}</p>
+                    <span>Turma 345</span>
+                  </div>
+                </Link>
               ),
             )}
-        </Link>
       </Section1>
     </DivGeral>
   );
