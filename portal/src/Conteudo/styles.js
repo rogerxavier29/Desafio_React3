@@ -6,6 +6,10 @@ export const DivGeral = styled.div`
   background: #fff;
 `;
 
+export const SubGeral = styled.section`
+  margin: 50px;
+`;
+
 export const Linky = styled.div`
   margin: 25px;
   span {
@@ -19,4 +23,29 @@ export const Titulo = styled.h1`
   margin: 25px;
   font-size: 25px;
   cursor: pointer;
+`;
+
+export const SectionForm = styled.section`
+  margin: 30px;
+`;
+
+export const Form = styled.form`
+  display: grid;
+  width: 900px;
+  input {
+    width: 300px;
+    height: 20px;
+    margin-bottom: 30px;
+  }
+  textarea {
+    width: 900px;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+  button {
+    width: 200px;
+    height: 35px;
+    justify-self: self-end;
+    border-radius: 8px;
+  }
 `;
