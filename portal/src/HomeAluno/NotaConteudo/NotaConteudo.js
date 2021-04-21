@@ -10,6 +10,7 @@ import {
   Section1,
   SubSection,
   Section2,
+  SubSection2,
 } from './styles';
 import axios from 'axios';
 
@@ -61,35 +62,38 @@ const NotaConteudo = (props) => {
           </button>
           <SubSection>
             {disciplina &&
-              disciplina.discipline.contents.map(({ _id, title }) => (
-                <div>
-                  <p key={_id}>{title}</p>
-                </div>
-              ))}
+              disciplina.discipline.contents.map(
+                ({ id, title, description }) => (
+                  <div>
+                    <Link
+                      to={{
+                        pathname: `/visualizarconteudo/${name}`,
+                        state: {
+                          titulo: `${title}`,
+                          description: `${description}`,
+                          id: `${id}`,
+                        },
+                      }}
+                    >
+                      <p key={id}>{title}</p>
+                    </Link>
+                  </div>
+                ),
+              )}
           </SubSection>
         </Section1>
 
         <Section2>
-          <div>
-            <p>Trabalho 1</p>
-            <p>Peso 2.0</p>
-            <p>Nota 10</p>
-          </div>
-          <div>
-            <p>Trabalho 1</p>
-            <p>Peso 2.0</p>
-            <p>Nota 10</p>
-          </div>
-          <div>
-            <p>Trabalho 1</p>
-            <p>Peso 2.0</p>
-            <p>Nota 10</p>
-          </div>
-          <div>
-            <p>Trabalho 1</p>
-            <p>Peso 2.0</p>
-            <p>Nota 10</p>
-          </div>
+          <SubSection2>
+            <button>
+              <Link to={`/publicarnotas/${_id}`}>Publicar Notas</Link>
+            </button>
+            <div>
+              <p>Trabalho 1</p>
+              <p>Peso 2.0</p>
+              <p>Nota 10</p>
+            </div>
+          </SubSection2>
         </Section2>
       </SubDiv>
     </DivGeral>

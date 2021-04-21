@@ -34,15 +34,26 @@ export const Section1 = styled.section`
   border-style: solid;
   border-color: #6495ed;
   border-radius: 3px;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
   padding-top: 20px;
+  button {
+    width: 300px;
+    height: 30px;
+    justify-self: center;
+    text-align: center;
+  }
+`;
+
+export const SubSection = styled.section`
+  display: flex;
+  justify-self: self-start;
   div {
     width: 130px;
-    height: 130px;
+    height: 100px;
     border-style: groove;
     border-radius: 6px;
     cursor: pointer;
+    margin-left: 10px;
     p {
       margin: 20px;
       font-size: 18px;
@@ -60,7 +71,7 @@ export const Section2 = styled.section`
   justify-content: space-around;
   div {
     width: 105px;
-    height: 105px;
+    height: 95px;
     border-style: groove;
     border-radius: 6px;
     margin: 20px;
@@ -71,5 +82,16 @@ export const Section2 = styled.section`
       font-size: 14px;
       font-weight: bold;
     }
+  }
+`;
+
+export const SubSection2 = styled.section`
+  display: grid;
+  padding-top: 20px;
+  button {
+    width: 300px;
+    height: 30px;
+    justify-self: center;
+    text-align: center;
   }
 `;
