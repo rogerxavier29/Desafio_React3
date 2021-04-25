@@ -14,6 +14,8 @@ import {
 
 const PublicarNotas = (props) => {
   const [alunos, setAlunos] = useState();
+  const [nomeTrabalho, setNomeTrabalho] = useState();
+  const [valorTrabalho, setValorTrabalho] = useState();
 
   const token = sessionStorage.getItem('token');
 
@@ -39,18 +41,53 @@ const PublicarNotas = (props) => {
       });
   };
 
+  const data = {
+    notas: {
+      nomeNota: nomeTrabalho,
+      pesoNota: valorTrabalho,
+    },
+    alunos: {
+      valorNota: alunos.nota,
+    },
+  };
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    axios
+      .post(`https://projetoportal.herokuapp.com/nota/${_id}`, data, options)
+      .then(function (response) {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
   return (
     <DivGeral>
       <Header />
       <LinkVoltar>
         <Link to="/notaconteudo">Voltar</Link>
       </LinkVoltar>
-      <Form onSubmit="">
+      <Form onSubmit={handleSubmit}>
         <DivTrabalho>
           <label htmlFor="NomeTrab">Nome do Trabalho:</label>
-          <input id="NomeTrab" type="text" />
+          <input
+            id="NomeTrab"
+            type="text"
+            value={nomeTrabalho}
+            onChange={(event) => setNomeTrabalho(event.target.value)}
+            required
+          />
           <label htmlFor="ValorTrab">Valor do Trabalho:</label>
-          <input id="ValorTrab" type="text" />
+          <input
+            id="ValorTrab"
+            type="text"
+            value={valorTrabalho}
+            onChange={(event) => setValorTrabalho(event.target.value)}
+            required
+          />
         </DivTrabalho>
         <Tabela>
           <thead>
@@ -67,17 +104,27 @@ const PublicarNotas = (props) => {
           </thead>
           <tbody>
             {alunos &&
-              alunos.disciplinas.map(({ _id, firstname }) => (
-                <tr key={_id}>
-                  <td>{firstname}</td>
+              alunos.disciplinas.map((aluno, index, array) => (
+                <tr key={index}>
                   <td>
-                    <input type="text" />
+                    {aluno.firstname} {aluno.lastname}
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      value={aluno.nota}
+                      onChange={(event) => {
+                        let aux = alunos;
+                        aux[index] = { ...aluno, nota: event.target.value };
+                        setAlunos(aux);
+                      }}
+                    />
                   </td>
                 </tr>
               ))}
           </tbody>
         </Tabela>
-        <Botao>Salvar</Botao>
+        <Botao type="submit">Salvar</Botao>
       </Form>
     </DivGeral>
   );
