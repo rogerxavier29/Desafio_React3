@@ -11,6 +11,11 @@ import {
   SubSection,
   Section2,
   SubSection2,
+  SectionNotas,
+  SectionProf,
+  SectionAluno,
+  SubDiv2,
+  SectionNotaAluno,
 } from './styles';
 import axios from 'axios';
 
@@ -28,6 +33,8 @@ const NotaConteudo = (props) => {
   const _id = props.match.params._id;
 
   const name = props.match.params.name;
+
+  const userType = sessionStorage.getItem('checkbox');
 
   useEffect(() => {
     getdisciplina();
@@ -55,45 +62,105 @@ const NotaConteudo = (props) => {
       <Titulo>{name} - Turma 345</Titulo>
       <SubDiv>
         <Section1>
-          <button>
-            <Link to={`/apresentconteudo/${_id}/${name}`}>
-              Cadastro de Conteudo
-            </Link>
-          </button>
-          <SubSection>
-            {disciplina &&
-              disciplina.discipline.contents.map(
-                ({ id, title, description }) => (
-                  <div>
-                    <Link
-                      to={{
-                        pathname: `/visualizarconteudo/${name}`,
-                        state: {
-                          titulo: `${title}`,
-                          description: `${description}`,
-                          id: `${id}`,
-                        },
-                      }}
-                    >
-                      <p key={id}>{title}</p>
-                    </Link>
-                  </div>
-                ),
-              )}
-          </SubSection>
+          {userType === '2' ? (
+            <SectionProf>
+              <button>
+                <Link to={`/apresentconteudo/${_id}/${name}`}>
+                  Cadastro de Conteudo
+                </Link>
+              </button>
+              {disciplina &&
+                disciplina.discipline.contents.map(
+                  ({ id, title, description }) => (
+                    <div>
+                      <Link
+                        to={{
+                          pathname: `/visualizarconteudo/${name}`,
+                          state: {
+                            titulo: `${title}`,
+                            description: `${description}`,
+                            id: `${id}`,
+                          },
+                        }}
+                      >
+                        <p key={id}>{title}</p>
+                      </Link>
+                    </div>
+                  ),
+                )}
+            </SectionProf>
+          ) : (
+            <SectionAluno>
+              {disciplina &&
+                disciplina.discipline.contents.map(
+                  ({ id, title, description }) => (
+                    <div>
+                      <Link
+                        to={{
+                          pathname: `/visualizarconteudo/${name}`,
+                          state: {
+                            titulo: `${title}`,
+                            description: `${description}`,
+                            id: `${id}`,
+                          },
+                        }}
+                      >
+                        <p key={id}>{title}</p>
+                      </Link>
+                    </div>
+                  ),
+                )}
+            </SectionAluno>
+          )}
         </Section1>
 
         <Section2>
-          <SubSection2>
-            <button>
-              <Link to={`/publicarnotas/${_id}`}>Publicar Notas</Link>
-            </button>
-            <div>
-              <p>Trabalho 1</p>
-              <p>Peso 2.0</p>
-              <p>Nota 10</p>
-            </div>
-          </SubSection2>
+          {userType === '2' ? (
+            <SubSection2>
+              <button>
+                <Link to={`/publicarnotas/${_id}`}>Publicar Notas</Link>
+              </button>
+              <SectionNotas>
+                {disciplina &&
+                  disciplina.discipline.notas.map((nota) => (
+                    <div>
+                      <p>
+                        <span>Trabalho:</span>
+                        {nota && nota.nomeNota}
+                      </p>
+                      <p>
+                        <span>Peso:</span>
+                        {nota && nota.pesoNota}
+                      </p>
+                    </div>
+                  ))}
+              </SectionNotas>
+            </SubSection2>
+          ) : (
+            <SectionNotaAluno>
+              {disciplina &&
+                disciplina.discipline.notas.map((nota) => (
+                  <div>
+                    <p>
+                      <span>Trabalho:</span>
+                      {nota && nota.nomeNota}
+                    </p>
+                    <p>
+                      <span>Peso:</span>
+                      {nota && nota.pesoNota}
+                    </p>
+                    <p>
+                      {disciplina &&
+                        disciplina.discipline.notas[0].alunos.map(
+                          (notasAlunos) => (
+                            <span>Peso:{notasAlunos.valorNota}</span>
+                          ),
+                        )}
+                    </p>
+                  </div>
+                ))}
+            </SectionNotaAluno>
+          )}
         </Section2>
       </SubDiv>
     </DivGeral>
