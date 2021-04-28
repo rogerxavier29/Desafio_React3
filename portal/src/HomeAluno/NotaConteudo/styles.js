@@ -37,7 +37,10 @@ export const Section1 = styled.section`
   display: grid;
   padding-top: 10px;
   overflow-x: auto;
+`;
 
+export const SectionProf = styled.section`
+  display: grid;
   button {
     width: 300px;
     height: 30px;
@@ -46,25 +49,9 @@ export const Section1 = styled.section`
     background: #fff;
     border-radius: 5px;
   }
-  div {
-    width: 200px;
-    height: 100px;
-    border-style: groove;
-    border-radius: 6px;
-    cursor: pointer;
-    margin: 10px;
-    padding: 5px;
-    background: #98fb98;
-
-    p {
-      margin: 20px;
-      font-size: 18px;
-      color: #fff;
-    }
-  }
 `;
 
-export const SectionProf = styled.section`
+export const SubSection1 = styled.section`
   display: flex;
   margin: 0 auto;
   overflow-x: auto;
@@ -72,7 +59,7 @@ export const SectionProf = styled.section`
   max-width: 850px;
   div {
     width: 200px;
-    height: 100px;
+    height: 95px;
     border-style: groove;
     border-radius: 6px;
     cursor: pointer;
@@ -89,7 +76,7 @@ export const SectionProf = styled.section`
 
 export const SectionAluno = styled.section`
   display: flex;
-  margin: 30px;
+  margin: 0 auto;
   div {
     width: 150px;
   }
@@ -142,8 +129,9 @@ export const SectionNotaAluno = styled.section`
   display: flex;
   overflow-x: auto;
   overflow-y: auto;
-  max-width: 900px;
-  margin: 20px;
+  max-width: 950px;
+  margin: 0 auto;
+  margin-top: 20px;
   div {
     width: 200px;
     height: 80px;
@@ -151,6 +139,7 @@ export const SectionNotaAluno = styled.section`
     margin: 10px;
     padding: 10px;
     display: grid;
+    gap: 10px;
     border-radius: 4px;
     font-size: 14px;
     span {

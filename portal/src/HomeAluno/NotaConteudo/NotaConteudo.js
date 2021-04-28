@@ -8,7 +8,7 @@ import {
   Titulo,
   SubDiv,
   Section1,
-  SubSection,
+  SubSection1,
   Section2,
   SubSection2,
   SectionNotas,
@@ -35,6 +35,8 @@ const NotaConteudo = (props) => {
   const name = props.match.params.name;
 
   const userType = sessionStorage.getItem('checkbox');
+
+  const idAluno = sessionStorage.getItem('id');
 
   useEffect(() => {
     getdisciplina();
@@ -69,25 +71,27 @@ const NotaConteudo = (props) => {
                   Cadastro de Conteudo
                 </Link>
               </button>
-              {disciplina &&
-                disciplina.discipline.contents.map(
-                  ({ id, title, description }) => (
-                    <div>
-                      <Link
-                        to={{
-                          pathname: `/visualizarconteudo/${name}`,
-                          state: {
-                            titulo: `${title}`,
-                            description: `${description}`,
-                            id: `${id}`,
-                          },
-                        }}
-                      >
-                        <p key={id}>{title}</p>
-                      </Link>
-                    </div>
-                  ),
-                )}
+              <SubSection1>
+                {disciplina &&
+                  disciplina.discipline.contents.map(
+                    ({ id, title, description }) => (
+                      <div>
+                        <Link
+                          to={{
+                            pathname: `/visualizarconteudo/${name}`,
+                            state: {
+                              titulo: `${title}`,
+                              description: `${description}`,
+                              id: `${id}`,
+                            },
+                          }}
+                        >
+                          <p key={id}>{title}</p>
+                        </Link>
+                      </div>
+                    ),
+                  )}
+              </SubSection1>
             </SectionProf>
           ) : (
             <SectionAluno>
@@ -150,12 +154,11 @@ const NotaConteudo = (props) => {
                       {nota && nota.pesoNota}
                     </p>
                     <p>
-                      {disciplina &&
-                        disciplina.discipline.notas[0].alunos.map(
-                          (notasAlunos) => (
-                            <span>Peso:{notasAlunos.valorNota}</span>
-                          ),
-                        )}
+                      {nota.alunos
+                        .filter((nota) => nota.idAlunos === idAluno)
+                        .map((notas) => (
+                          <span key={_id}>Valor Nota: {notas.valorNota}</span>
+                        ))}
                     </p>
                   </div>
                 ))}
