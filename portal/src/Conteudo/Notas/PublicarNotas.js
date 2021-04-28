@@ -26,6 +26,7 @@ const PublicarNotas = (props) => {
   };
 
   const _id = props.match.params._id;
+
   useEffect(() => {
     getalunos();
   }, []);
@@ -47,7 +48,7 @@ const PublicarNotas = (props) => {
       pesoNota: valorTrabalho,
     },
     alunos: {
-      valorNota: alunos.nota,
+      valorNota: alunos,
     },
   };
 
