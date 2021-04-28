@@ -11,26 +11,32 @@ export const Titulo = styled.h1`
 `;
 
 export const Section1 = styled.section`
-  width: 500px;
-  height: 260px;
+  width: 900px;
+  height: 400px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin-top: 10px;
   div {
-    width: 250px;
+    width: 230px;
     height: 70px;
-    margin: 15px;
     border-radius: 3px;
     background: #dcdcdc;
     cursor: pointer;
     p {
       margin: 10px;
-      font-size: 15px;
+      font-size: 18px;
+      padding-top: 5px;
+      font-style: none;
+      text-decoration: none;
+      color: black;
     }
     span {
       margin: 10px;
       color: gray;
       text-transform: uppercase;
-      font-size: 14px;
+      font-size: 12px;
     }
   }
 `;
