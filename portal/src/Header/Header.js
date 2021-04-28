@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Imagens from '../Imagens/Ellipse 1.svg';
+import Modal from 'react-modal';
+import MeusDados from './Meus Dados/MeusDados';
 
 import { Cabeçalho, LiNome, LiImg } from './styles';
 
+const styles = {
+  content: {
+    margin: '0 auto',
+    top: '100px',
+    width: '400px',
+    height: '300px',
+  },
+};
+
 const Header = () => {
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <Cabeçalho>
       <ul>
@@ -13,7 +26,14 @@ const Header = () => {
         <LiImg>
           <img src={Imagens} />
           <ul>
-            <li>Meus Dados</li>
+            <Modal
+              isOpen={openModal}
+              onRequestClose={() => setOpenModal(false)}
+              style={styles}
+            >
+              <MeusDados />
+            </Modal>
+            <li onClick={() => setOpenModal(true)}>Meus Dados</li>
             <li>
               <a href="/Loginadmin"> Sair</a>
             </li>
