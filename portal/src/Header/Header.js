@@ -3,7 +3,7 @@ import Imagens from '../Imagens/Ellipse 1.svg';
 import Modal from 'react-modal';
 import MeusDados from './Meus Dados/MeusDados';
 
-import { Cabeçalho, LiNome, LiImg } from './styles';
+import { Cabeçalho, LiNome, LiImg, BotaoFechar } from './styles';
 
 const styles = {
   content: {
@@ -31,6 +31,7 @@ const Header = () => {
               onRequestClose={() => setOpenModal(false)}
               style={styles}
             >
+              <BotaoFechar onClick={() => setOpenModal(false)}>X</BotaoFechar>
               <MeusDados />
             </Modal>
             <li onClick={() => setOpenModal(true)}>Meus Dados</li>
