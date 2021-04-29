@@ -27,7 +27,7 @@ const LoginAdmin = () => {
       .then(
         (response) => {
           if (response.data.token) {
-            sessionStorage.setItem(' _id', response.data.user._id);
+            sessionStorage.setItem('id', response.data.user._id);
             sessionStorage.setItem('name', response.data.user.firstname);
             sessionStorage.setItem('email', response.data.user.email);
             sessionStorage.setItem('token', response.data.token);
