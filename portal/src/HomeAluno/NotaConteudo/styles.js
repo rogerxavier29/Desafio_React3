@@ -79,6 +79,18 @@ export const SectionAluno = styled.section`
   margin: 0 auto;
   div {
     width: 150px;
+    height: 95px;
+    border-style: groove;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 10px;
+    padding: 5px;
+    background: #98fb98;
+    p {
+      margin: 20px;
+      font-size: 18px;
+      color: #fff;
+    }
   }
 `;
 
