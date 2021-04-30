@@ -25,7 +25,7 @@ const Rotas = () => {
           path="/apresentconteudo/:_id/:name"
           component={ApresentacaoConteudo}
         />
-        <Route path="/Loginadmin" component={LoginAdmin} />
+        <Route path="/loginadmin" component={LoginAdmin} />
         <Route path="/senhaadmin" component={SenhaAdmin} />
         <Route path="/homeadmin" component={HomeAdmin} />
         <Route path="/matriculaluno" component={MatriculaAluno} />
