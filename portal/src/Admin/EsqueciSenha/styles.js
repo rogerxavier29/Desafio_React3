@@ -16,7 +16,7 @@ export const Titulo = styled.h1`
 
 export const DivForm = styled.div`
   width: 550px;
-  height: 400px;
+  height: 420px;
   background: #fff;
   margin: 0 auto;
   margin-top: 30px;
@@ -25,7 +25,7 @@ export const DivForm = styled.div`
     height: 330px;
     display: grid;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 18px;
     label {
       width: 80px;
       height: 0px;
@@ -36,6 +36,15 @@ export const DivForm = styled.div`
       height: 30px;
       border-radius: 4px;
     }
+    span {
+      font-size: 12px;
+      color: red;
+    }
+    p {
+      font-size: 14px;
+      color: #2ecc71;
+      font-weight: bold;
+    }
     button {
       width: 310px;
       height: 35px;
@@ -45,6 +54,14 @@ export const DivForm = styled.div`
       background: #fff;
       justify-self: center;
     }
+  }
+`;
+
+export const DivVoltar = styled.div`
+  margin: 20px;
+  p {
+    text-decoration: none;
+    color: #6a5acd;
   }
 `;
 
