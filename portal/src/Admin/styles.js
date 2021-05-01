@@ -26,6 +26,10 @@ export const SectionForm = styled.section`
     border-radius: 4px;
     margin-bottom: 10px;
   }
+  span {
+    font-size: 12px;
+    color: red;
+  }
   button {
     width: 310px;
     height: 40px;
@@ -38,6 +42,8 @@ export const SectionForm = styled.section`
 
 export const EsquecSenha = styled.div`
   justify-self: self-end;
+  font-size: 13px;
+  font-weight: bold;
 `;
 
 export const Titulo = styled.h1`

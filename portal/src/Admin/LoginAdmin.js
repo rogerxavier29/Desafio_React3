@@ -15,29 +15,78 @@ import {
 const LoginAdmin = () => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  const [erroEmail, setErroEmail] = useState(null);
+  const [erroSenha, setErroSenha] = useState(null);
+  const [erro, setErro] = useState(null);
+
+  function validarEmail(email) {
+    if (email.length === 0) {
+      setErroEmail('Preencha um valor');
+      return false;
+    } else if (!/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(email)) {
+      setErroEmail('Preencha um E-mail válido');
+      return false;
+    } else {
+      setErroEmail(null);
+      return true;
+    }
+  }
+
+  function handleBlurEmail({ target }) {
+    validarEmail(target.value);
+  }
+
+  function handleChangeEmail({ target }) {
+    if (erroEmail) validarEmail(target.value);
+    setEmail(target.value);
+  }
+
+  function validarSenha(senha) {
+    if (senha.lenght === 0) {
+      setErroSenha('Preencha uma Senha');
+      return false;
+    } else if (!/[0-9a-zA-Z]{6,}/.test(senha)) {
+      setErroSenha('A senha precisa ter no mínimo 6 caracteres.');
+      return false;
+    } else {
+      setErroSenha(null);
+      return true;
+    }
+  }
+
+  function handleBlurSenha({ target }) {
+    validarSenha(target.value);
+  }
+
+  function handleChangeSenha({ target }) {
+    if (erroSenha) validarSenha(target.value);
+    setSenha(target.value);
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    axios
-      .post('https://projetoportal.herokuapp.com/sessions/adm', {
-        email: email,
-        password: senha,
-      })
-      .then(
-        (response) => {
-          if (response.data.token) {
-            sessionStorage.setItem('id', response.data.user._id);
-            sessionStorage.setItem('name', response.data.user.firstname);
-            sessionStorage.setItem('email', response.data.user.email);
-            sessionStorage.setItem('token', response.data.token);
-            window.location.replace('/homeadmin');
-          }
-        },
-        (error) => {
-          console.log(error);
-        },
-      );
+    if (validarEmail(email) && validarSenha(senha)) {
+      axios
+        .post('https://projetoportal.herokuapp.com/sessions/adm', {
+          email: email,
+          password: senha,
+        })
+        .then(
+          (response) => {
+            if (response.data.token) {
+              sessionStorage.setItem('id', response.data.user._id);
+              sessionStorage.setItem('name', response.data.user.firstname);
+              sessionStorage.setItem('email', response.data.user.email);
+              sessionStorage.setItem('token', response.data.token);
+              window.location.replace('/homeadmin');
+            }
+          },
+          (erro) => {
+            setErro('Email ou Senha invalidos');
+          },
+        );
+    }
   }
 
   return (
@@ -51,19 +100,28 @@ const LoginAdmin = () => {
             type="email"
             placeholder="E-mail"
             value={email}
-            onChange={(event) => setEmail(event.target.value)}
+            onChange={handleChangeEmail}
+            onBlur={handleBlurEmail}
+            required
           />
+          {erroEmail && <span>{erroEmail}</span>}
+
           <label htmlFor="senha">Senha</label>
           <input
             id="senha"
             type="password"
             placeholder="Pelo menos 6 caracteres"
             value={senha}
-            onChange={(event) => setSenha(event.target.value)}
+            onChange={handleChangeSenha}
+            onBlur={handleBlurSenha}
+            required
           />
+          {erroSenha && <span>{erroSenha}</span>}
+
           <EsquecSenha>
             <Link to="/senhaadmin">Esqueci Senha</Link>
           </EsquecSenha>
+          {erro && <span>{erro}</span>}
           <button type="submit">Entrar</button>
         </SectionForm>
       </Form>
