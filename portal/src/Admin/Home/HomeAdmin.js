@@ -12,6 +12,7 @@ import {
   DivUsuario,
   DivMatricula,
   DivDisciplina,
+  BotaoFechar,
 } from './styles';
 
 const styles = {
@@ -46,6 +47,7 @@ const HomeAdmin = () => {
           isOpen={openModal}
           onRequestClose={() => setOpenModal(false)}
         >
+          <BotaoFechar onClick={() => setOpenModal(false)}>X</BotaoFechar>
           <CadastroUsuario />
         </Modal>
         <DivUsuario onClick={() => setOpenModal(true)}>
@@ -61,6 +63,7 @@ const HomeAdmin = () => {
           isOpen={openModal2}
           onRequestClose={() => setOpenModal2(false)}
         >
+          <BotaoFechar onClick={() => setOpenModal(false)}>X</BotaoFechar>
           <FormDisciplinas />
         </Modal>
         <DivDisciplina onClick={() => setOpenModal2(true)}>

@@ -63,3 +63,4 @@ export const DivDisciplina = styled.div`
     font-weight: bold;
   }
 `;
+export const BotaoFechar = styled.button``;
