@@ -69,7 +69,7 @@ const CadastroUsuario = () => {
   }
 
   function handleChangeCPF({ target }) {
-    if (erroCpf) validarEmail(target.value);
+    if (erroCpf) validarCPF(target.value);
     setCpf(target.value);
   }
 
