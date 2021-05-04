@@ -16,7 +16,7 @@ export const Titulo = styled.h1`
 
 export const Form = styled.form`
   width: 500px;
-  height: 360px;
+  height: 380px;
   background: #fff;
   justify-self: center;
   z-index: 10;
@@ -51,6 +51,11 @@ export const Form = styled.form`
       background: #fff;
       color: #6959cd;
       font-weight: bold;
+    }
+    span {
+      font-size: 13px;
+      color: red;
+      margin-left: 5px;
     }
   }
 `;
