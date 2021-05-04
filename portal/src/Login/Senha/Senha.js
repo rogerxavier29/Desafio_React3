@@ -10,9 +10,78 @@ const Senha = () => {
   const [email, setEmail] = useState('');
   const [cpf, setCpf] = useState('');
   const [novaSenha, setNovaSenha] = useState('');
+  const [erroEmail, setErroEmail] = useState(null);
+  const [erroCpf, setErroCpf] = useState(null);
+  const [erroNovaSenha, setErroNovaSenha] = useState(null);
 
   function handleChange({ target }) {
     setCheckBox(target.value);
+  }
+
+  function validarEmail(email) {
+    if (email.length === 0) {
+      setEmail('Preencha um valor');
+      return false;
+    } else if (!/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(email)) {
+      setErroEmail('Preencha um E-mail válido');
+      return false;
+    } else {
+      setErroEmail(null);
+      return true;
+    }
+  }
+
+  function handleBlurEmail({ target }) {
+    validarEmail(target.value);
+  }
+
+  function handleChangeEmail({ target }) {
+    if (erroEmail) validarEmail(target.value);
+    setEmail(target.value);
+  }
+
+  function validarCPF(cpf) {
+    if (cpf.length === 0) {
+      setCpf('Preencha um valor');
+      return false;
+    } else if (!/[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}/g.test(cpf)) {
+      setErroCpf('Preencha CPF válido');
+      return false;
+    } else {
+      setErroCpf(null);
+      return true;
+    }
+  }
+
+  function handleBlurCPF({ target }) {
+    validarCPF(target.value);
+  }
+
+  function handleChangeCPF({ target }) {
+    if (erroCpf) validarCPF(target.value);
+    setCpf(target.value);
+  }
+
+  function validarSenhaNova(novaSenha) {
+    if (novaSenha.lenght === 0) {
+      setErroNovaSenha('Preencha uma Senha');
+      return false;
+    } else if (!/[0-9a-zA-Z]{6,}/.test(novaSenha)) {
+      setErroNovaSenha('A senha precisa ter no mínimo 6 caracteres.');
+      return false;
+    } else {
+      setErroNovaSenha(null);
+      return true;
+    }
+  }
+
+  function handleBlurSenhaNova({ target }) {
+    validarSenhaNova(target.value);
+  }
+
+  function handleChangeNovaSenha({ target }) {
+    if (erroNovaSenha) validarSenhaNova(target.value);
+    setNovaSenha(target.value);
   }
 
   const data = {
@@ -24,14 +93,19 @@ const Senha = () => {
   function handleSubmit(event) {
     event.preventDefault();
 
-    axios
-      .post('https://projetoportal.herokuapp.com/sessions/resetpassword', data)
-      .then(function (response) {
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    if (validarEmail(email) && validarCPF(cpf) && validarSenhaNova(novaSenha)) {
+      axios
+        .post(
+          'https://projetoportal.herokuapp.com/sessions/resetpassword',
+          data,
+        )
+        .then(function (response) {
+          console.log(response.data);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
   }
 
   return (
@@ -42,18 +116,21 @@ const Senha = () => {
           <li>
             <input
               id="Estudante"
-              type="checkbox"
+              type="radio"
+              name="radio"
               value="3"
               checked={checkbox === '3'}
               onChange={handleChange}
+              required
             />
             <label htmlFor="Estudante">Estudante</label>
           </li>
           <li>
             <input
               id="Professor"
-              type="checkbox"
+              type="radio"
               value="2"
+              name="radio"
               checked={checkbox === '2'}
               onChange={handleChange}
             />
@@ -66,24 +143,33 @@ const Senha = () => {
             type="text"
             placeholder="Email"
             value={email}
-            onChange={(event) => setEmail(event.target.value)}
+            onChange={handleChangeEmail}
+            onBlur={handleBlurEmail}
+            required
           />
+          {erroEmail && <span>{erroEmail}</span>}
 
           <label htmlFor="">CPF</label>
           <input
             type="text"
             placeholder="CPF"
             value={cpf}
-            onChange={(event) => setCpf(event.target.value)}
+            onChange={handleChangeCPF}
+            onBlur={handleBlurCPF}
+            required
           />
+          {erroCpf && <span>{erroCpf}</span>}
 
           <label htmlFor="">Nova Senha</label>
           <input
             type="text"
             placeholder="Nova Senha"
             value={novaSenha}
-            onChange={(event) => setNovaSenha(event.target.value)}
+            onChange={handleChangeNovaSenha}
+            onBlur={handleBlurSenhaNova}
+            required
           />
+          {erroNovaSenha && <span>{erroNovaSenha}</span>}
 
           <button>Redefinir Senha</button>
         </div>

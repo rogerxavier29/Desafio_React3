@@ -7,7 +7,7 @@ export const DivGeral = styled.div`
   padding-top: 0.5px;
   form {
     width: 500px;
-    height: 320px;
+    height: 350px;
     background: #ffff;
     margin-left: 380px;
     margin-top: 30px;
@@ -23,18 +23,24 @@ export const DivGeral = styled.div`
     div {
       display: grid;
       justify-content: center;
+      gap: 10px;
+      label {
+        margin-left: 5px;
+      }
       input {
-        margin: 10px;
         width: 270px;
         height: 30px;
         border-radius: 4px;
       }
-
       button {
         margin: 20px 55px;
         width: 200px;
         height: 34px;
         border-radius: 4px;
+      }
+      span {
+        font-size: 13px;
+        color: red;
       }
     }
   }
@@ -42,6 +48,7 @@ export const DivGeral = styled.div`
 
 export const DivSenha = styled.div`
   margin: -3px 25px;
+  margin-right: 32px;
   justify-self: self-end;
   font-size: 14px;
   color: #6959cd;
