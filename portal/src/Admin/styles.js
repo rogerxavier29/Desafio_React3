@@ -59,3 +59,7 @@ export const Image = styled.div`
     max-height: 360px;
   }
 `;
+export const BotaoCarregando = styled.button`
+  font-size: 16px;
+  color: #6959cd;
+`;

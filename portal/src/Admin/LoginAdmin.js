@@ -10,6 +10,7 @@ import {
   Image,
   SectionForm,
   EsquecSenha,
+  BotaoCarregando,
 } from './styles';
 
 const LoginAdmin = () => {
@@ -18,6 +19,7 @@ const LoginAdmin = () => {
   const [erroEmail, setErroEmail] = useState(null);
   const [erroSenha, setErroSenha] = useState(null);
   const [erro, setErro] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   function validarEmail(email) {
     if (email.length === 0) {
@@ -66,6 +68,7 @@ const LoginAdmin = () => {
   function handleSubmit(event) {
     event.preventDefault();
 
+    setLoading(true);
     if (validarEmail(email) && validarSenha(senha)) {
       axios
         .post('https://projetoportal.herokuapp.com/sessions/adm', {
@@ -79,6 +82,7 @@ const LoginAdmin = () => {
               sessionStorage.setItem('name', response.data.user.firstname);
               sessionStorage.setItem('email', response.data.user.email);
               sessionStorage.setItem('token', response.data.token);
+              setLoading(false);
               window.location.replace('/homeadmin');
             }
           },
@@ -122,7 +126,11 @@ const LoginAdmin = () => {
             <Link to="/senhaadmin">Esqueci Senha</Link>
           </EsquecSenha>
           {erro && <span>{erro}</span>}
-          <button type="submit">Entrar</button>
+          {loading ? (
+            <BotaoCarregando disabled>Carregando...</BotaoCarregando>
+          ) : (
+            <button type="submit">Entrar</button>
+          )}
         </SectionForm>
       </Form>
       <Image>

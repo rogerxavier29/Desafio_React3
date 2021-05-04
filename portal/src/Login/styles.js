@@ -7,7 +7,7 @@ export const DivGeral = styled.div`
   padding-top: 0.5px;
   form {
     width: 500px;
-    height: 350px;
+    height: 380px;
     background: #ffff;
     margin-left: 380px;
     margin-top: 30px;
@@ -67,4 +67,9 @@ export const Image = styled.div`
   img {
     max-height: 310px;
   }
+`;
+
+export const BotaoCarregando = styled.button`
+  font-size: 16px;
+  color: #6959cd;
 `;

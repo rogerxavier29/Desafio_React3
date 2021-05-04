@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Imagens from '../Imagens/undraw_environmental_study_skau 1.svg';
+import { FaSpinner } from 'react-icons/fa';
 import axios from 'axios';
 
-import { DivGeral, Image, Titulo, DivSenha } from './styles';
+import { DivGeral, Image, Titulo, DivSenha, BotaoCarregando } from './styles';
 
 const LoginUsuarios = () => {
   const [checkbox, setCheckBox] = useState('');
   const [email, setEmail] = useState('');
-  const [erroEmail, setErroEmail] = useState(null);
   const [senha, setSenha] = useState('');
+  const [erroEmail, setErroEmail] = useState(null);
   const [erroSenha, setErroSenha] = useState(null);
   const [erro, setErro] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   function handleChange({ target }) {
     setCheckBox(target.value);
@@ -70,6 +72,7 @@ const LoginUsuarios = () => {
   function handleSubmit(event) {
     event.preventDefault();
 
+    setLoading(true);
     if (checkbox === '3' && validarEmail(email) && validarSenha(senha)) {
       axios.post('https://projetoportal.herokuapp.com/sessions/', data).then(
         (response) => {
@@ -79,6 +82,7 @@ const LoginUsuarios = () => {
             sessionStorage.setItem('email', response.data.user.email);
             sessionStorage.setItem('checkbox', response.data.user.usertype);
             sessionStorage.setItem('token', response.data.token);
+            setLoading(false);
             window.location.replace('/homealuno');
           }
         },
@@ -167,7 +171,11 @@ const LoginUsuarios = () => {
           <DivSenha>
             <Link to="/Senha">Esqueci Senha</Link>
           </DivSenha>
-          <button type="submit">Entrar</button>
+          {loading ? (
+            <BotaoCarregando disabled>Carregando...</BotaoCarregando>
+          ) : (
+            <button type="submit">Entrar</button>
+          )}
         </div>
       </form>
       <Image>
