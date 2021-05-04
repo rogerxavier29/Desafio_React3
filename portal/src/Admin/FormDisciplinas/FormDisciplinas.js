@@ -46,18 +46,21 @@ const FormDisciplinas = () => {
           placeholder="Nome"
           value={nomeDisc}
           onChange={(event) => setNomeDisc(event.target.value)}
+          required
         />
         <input
           type="text"
           placeholder="Matrícula Professor Responsável"
           value={matriculaProf}
           onChange={(event) => setMatriculaProf(event.target.value)}
+          required
         />
         <input
-          type="text"
+          type="number"
           placeholder="Quantidade de Alunos"
           value={quantAlunos}
           onChange={(event) => setQuantAlunos(event.target.value)}
+          required
         />
         <BtnSalvar type="submit">Salvar</BtnSalvar>
       </Form>
