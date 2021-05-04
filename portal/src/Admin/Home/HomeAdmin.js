@@ -63,7 +63,7 @@ const HomeAdmin = () => {
           isOpen={openModal2}
           onRequestClose={() => setOpenModal2(false)}
         >
-          <BotaoFechar onClick={() => setOpenModal(false)}>X</BotaoFechar>
+          <BotaoFechar onClick={() => setOpenModal2(false)}>X</BotaoFechar>
           <FormDisciplinas />
         </Modal>
         <DivDisciplina onClick={() => setOpenModal2(true)}>
