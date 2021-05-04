@@ -8,12 +8,15 @@ import axios from 'axios';
 const MatriculaAluno = () => {
   const [disciplinas, setDisciplinas] = useState();
   const [cpf, setCpf] = useState('');
+  const [erroCpf, setErroCpf] = useState(null);
   const [disciplinaSelecionada, setDisciplinaSelecionada] = useState({});
   const [disciplinaSelecionada2, setDisciplinaSelecionada2] = useState({});
   const [disciplinaSelecionada3, setDisciplinaSelecionada3] = useState({});
   const [disciplinaSelecionada4, setDisciplinaSelecionada4] = useState({});
   const [disciplinaSelecionada5, setDisciplinaSelecionada5] = useState({});
   const [disciplinaSelecionada6, setDisciplinaSelecionada6] = useState({});
+  const [erro, setErro] = useState(null);
+  const [matrSucesso, setMatrSucesso] = useState(null);
 
   const token = sessionStorage.getItem('token');
 
@@ -40,6 +43,28 @@ const MatriculaAluno = () => {
       });
   };
 
+  function validarCPF(cpf) {
+    if (cpf.length === 0) {
+      setCpf('Preencha um valor');
+      return false;
+    } else if (!/[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}/g.test(cpf)) {
+      setErroCpf('Preencha CPF válido');
+      return false;
+    } else {
+      setErroCpf(null);
+      return true;
+    }
+  }
+
+  function handleBlurCPF({ target }) {
+    validarCPF(target.value);
+  }
+
+  function handleChangeCPF({ target }) {
+    if (erroCpf) validarCPF(target.value);
+    setCpf(target.value);
+  }
+
   const dataDisciplinas = {
     disciplines: [
       disciplinaSelecionada,
@@ -53,18 +78,23 @@ const MatriculaAluno = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    axios
-      .post(
-        `https://projetoportal.herokuapp.com/registration/` + cpf,
-        dataDisciplinas,
-        options,
-      )
-      .then(function (response) {
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+
+    if (validarCPF(cpf)) {
+      axios
+        .post(
+          `https://projetoportal.herokuapp.com/registration/` + cpf,
+          dataDisciplinas,
+          options,
+        )
+        .then(function (response) {
+          if (response.data.user.cpf) {
+            setMatrSucesso('Cadastro Efetuado com sucesso!');
+          }
+        })
+        .catch(function (erro) {
+          setErro('CPF já matriculado!');
+        });
+    }
   }
 
   return (
@@ -75,11 +105,14 @@ const MatriculaAluno = () => {
         <Form onSubmit={handleSubmit}>
           <input
             value={cpf}
-            onChange={(event) => setCpf(event.target.value)}
+            onChange={handleChangeCPF}
+            onBlur={handleBlurCPF}
             type="text"
-            placeholder="N° de matrícula aluno"
+            placeholder="N° de matrícula aluno (CPF)"
             required
           />
+          {erroCpf && <span>{erroCpf}</span>}
+
           <SectionSelect>
             <select
               value={disciplinaSelecionada}
@@ -158,6 +191,8 @@ const MatriculaAluno = () => {
                 ))}
             </select>
           </SectionSelect>
+          {erro && <sub>{erro}</sub>}
+          {matrSucesso && <p>{matrSucesso}</p>}
           <DivBtn>
             <button type="submit">Salvar</button>
           </DivBtn>
