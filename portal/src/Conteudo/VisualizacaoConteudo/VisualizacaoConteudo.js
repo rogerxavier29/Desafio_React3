@@ -19,11 +19,13 @@ const VisualizacaoConteudo = (props) => {
 
   const description = props.location.state.description;
 
+  const _id = props.location.state._id;
+
   return (
     <DivGeral>
       <Header />
       <LinkVoltar>
-        <Link to="/notaconteudo">Voltar</Link>
+        <Link to={`/notaconteudo/${_id}/${name}`}>Voltar</Link>
       </LinkVoltar>
       <TituloDisc>{name} - Turma 345</TituloDisc>
       <SectionConteudo>

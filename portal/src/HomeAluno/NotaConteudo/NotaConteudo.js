@@ -14,7 +14,6 @@ import {
   SectionNotas,
   SectionProf,
   SectionAluno,
-  SubDiv2,
   SectionNotaAluno,
 } from './styles';
 import axios from 'axios';
@@ -71,6 +70,7 @@ const NotaConteudo = (props) => {
                   Cadastro de Conteudo
                 </Link>
               </button>
+
               <SubSection1>
                 {disciplina &&
                   disciplina.discipline.contents.map(
@@ -83,6 +83,7 @@ const NotaConteudo = (props) => {
                               titulo: `${title}`,
                               description: `${description}`,
                               id: `${id}`,
+                              _id: `${_id}`,
                             },
                           }}
                         >
@@ -106,6 +107,7 @@ const NotaConteudo = (props) => {
                             titulo: `${title}`,
                             description: `${description}`,
                             id: `${id}`,
+                            _id: `${_id}`,
                           },
                         }}
                       >

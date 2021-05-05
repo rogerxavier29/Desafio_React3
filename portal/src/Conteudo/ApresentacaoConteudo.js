@@ -44,7 +44,7 @@ const ApresentacaoConteudo = (props) => {
       <Header />
       <SubGeral>
         <Linky>
-          <Link to="/notaconteudo">
+          <Link to={`/notaconteudo/${_id}/${name}`}>
             <span>Voltar</span>
           </Link>
         </Linky>
