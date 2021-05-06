@@ -155,7 +155,7 @@ const SenhaAdmin = () => {
         </form>
       </DivForm>
       <Image>
-        <img src={Imagens} />
+        <img src={Imagens} alt="Homem desenhando no quadro, estatisticas" />
       </Image>
     </DivGeral>
   );
