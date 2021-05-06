@@ -25,7 +25,9 @@ const VisualizacaoConteudo = (props) => {
     <DivGeral>
       <Header />
       <LinkVoltar>
-        <Link to={`/notaconteudo/${_id}/${name}`}>Voltar</Link>
+        <Link to={`/notaconteudo/${_id}/${name}`}>
+          <p>Voltar</p>
+        </Link>
       </LinkVoltar>
       <TituloDisc>{name} - Turma 345</TituloDisc>
       <SectionConteudo>
