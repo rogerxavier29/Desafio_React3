@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Senha from '../Login/Senha/Senha';
-import HomeAluno from '../HomeAluno/HomeAluno';
+import HomeUsuario from '../HomeAluno/HomeUsuario';
 import NotaConteudo from '../HomeAluno/NotaConteudo/NotaConteudo';
 import ApresentacaoConteudo from '../Conteudo/ApresentacaoConteudo';
 import LoginAdmin from '../Admin/LoginAdmin';
@@ -19,7 +19,7 @@ const Rotas = () => {
       <Switch>
         <Route path="/loginusuarios" component={LoginUsuarios} />
         <Route path="/senha" component={Senha} />
-        <Route path="/homealuno" component={HomeAluno} />
+        <Route path="/homeusuario" component={HomeUsuario} />
         <Route path="/notaconteudo/:_id/:name" component={NotaConteudo} />
         <Route
           path="/apresentconteudo/:_id/:name"
@@ -30,7 +30,7 @@ const Rotas = () => {
         <Route path="/homeadmin" component={HomeAdmin} />
         <Route path="/matriculaluno" component={MatriculaAluno} />
         <Route
-          path="/visualizarconteudo/:name"
+          path="/visualizarconteudo/:name/"
           component={VisualizacaoConteudo}
         />
         <Route path="/publicarnotas/:_id" component={PublicarNotas} />
