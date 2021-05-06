@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+<style>
+  @import
+  url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+</style>;
+
 export const DivGeral = styled.div`
   height: 100vh;
   width: 100%;
@@ -12,6 +17,7 @@ export const Linky = styled.div`
     text-decoration: none;
     color: black;
     font-size: 18px;
+    font-family: 'Nunito', sans-serif;
   }
 `;
 
@@ -19,6 +25,7 @@ export const Titulo = styled.h1`
   margin: 25px;
   font-size: 25px;
   cursor: pointer;
+  font-family: 'Nunito', sans-serif;
 `;
 
 export const SubDiv = styled.div`
@@ -70,6 +77,7 @@ export const SubSection1 = styled.section`
       margin: 20px;
       font-size: 18px;
       color: #fff;
+      font-family: 'Nunito', sans-serif;
     }
   }
 `;
@@ -90,6 +98,7 @@ export const SectionAluno = styled.section`
       margin: 20px;
       font-size: 18px;
       color: #fff;
+      font-family: 'Nunito', sans-serif;
     }
   }
 `;
@@ -133,6 +142,7 @@ export const SectionNotas = styled.section`
     font-size: 14px;
     span {
       font-weight: bold;
+      font-family: 'Nunito', sans-serif;
     }
   }
 `;
@@ -156,6 +166,7 @@ export const SectionNotaAluno = styled.section`
     font-size: 14px;
     span {
       font-weight: bold;
+      font-family: 'Nunito', sans-serif;
     }
   }
 `;

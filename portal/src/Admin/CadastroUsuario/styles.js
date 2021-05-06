@@ -1,8 +1,14 @@
 import styled from 'styled-components';
 
+<style>
+  @import
+  url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+</style>;
+
 export const Titulo = styled.h2`
   margin: 20px;
   padding-top: 20px;
+  font-family: 'Nunito', sans-serif;
 `;
 
 export const Form = styled.form`

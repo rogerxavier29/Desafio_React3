@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+<style>
+  @import
+  url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+</style>;
+
 export const DivGeral = styled.div`
   width: 100%;
   height: 100vh;
@@ -12,6 +17,7 @@ export const Titulo = styled.h1`
   font-size: 25px;
   margin-top: 30px;
   text-align: center;
+  font-family: 'Nunito', sans-serif;
 `;
 
 export const DivForm = styled.div`
@@ -30,6 +36,7 @@ export const DivForm = styled.div`
       width: 80px;
       height: 0px;
       font-size: 15px;
+      font-family: 'Nunito', sans-serif;
     }
     input {
       width: 300px;
@@ -39,11 +46,13 @@ export const DivForm = styled.div`
     span {
       font-size: 12px;
       color: red;
+      font-family: 'Nunito', sans-serif;
     }
     p {
       font-size: 14px;
       color: #2ecc71;
       font-weight: bold;
+      font-family: 'Nunito', sans-serif;
     }
     button {
       width: 310px;
@@ -62,6 +71,7 @@ export const DivVoltar = styled.div`
   p {
     text-decoration: none;
     color: #6a5acd;
+    font-family: 'Nunito', sans-serif;
   }
 `;
 

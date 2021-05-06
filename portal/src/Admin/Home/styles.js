@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+<style>
+  @import
+  url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+</style>;
+
 export const DivGeral = styled.div`
   height: 100vh;
   width: 100%;
@@ -11,6 +16,7 @@ export const Titulo = styled.h1`
   margin: 50px;
   color: #0e4da4;
   cursor: pointer;
+  font-family: 'Nunito', sans-serif;
 `;
 
 export const SectionOptions = styled.section`
@@ -31,6 +37,7 @@ export const DivUsuario = styled.div`
     color: #fff;
     font-size: 17px;
     font-weight: bold;
+    font-family: 'Nunito', sans-serif;
   }
 `;
 
@@ -46,6 +53,7 @@ export const DivMatricula = styled.div`
     color: #fff;
     font-size: 17px;
     font-weight: bold;
+    font-family: 'Nunito', sans-serif;
   }
 `;
 
@@ -61,6 +69,7 @@ export const DivDisciplina = styled.div`
     color: #fff;
     font-size: 17px;
     font-weight: bold;
+    font-family: 'Nunito', sans-serif;
   }
 `;
 export const BotaoFechar = styled.button``;
