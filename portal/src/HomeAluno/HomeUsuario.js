@@ -5,7 +5,7 @@ import Header from '../Header/Header';
 
 import { DivGeral, Titulo, Section1 } from './styles';
 
-const HomeAluno = () => {
+const HomeUsuario = () => {
   const [listaDisciplinas, setListaDisciplinas] = useState();
 
   const token = sessionStorage.getItem('token');
@@ -68,4 +68,4 @@ const HomeAluno = () => {
   );
 };
 
-export default HomeAluno;
+export default HomeUsuario;

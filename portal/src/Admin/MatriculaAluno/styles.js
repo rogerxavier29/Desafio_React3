@@ -1,9 +1,17 @@
 import styled from 'styled-components';
 
+<style>
+  @import
+  url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+</style>;
+
 export const DivVoltar = styled.div`
   margin: 40px;
   font-size: 20px;
-  color: black;
+  p {
+    text-decoration: none;
+    color: black;
+  }
 `;
 
 export const Form = styled.form`

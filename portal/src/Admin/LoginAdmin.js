@@ -81,6 +81,7 @@ const LoginAdmin = () => {
               sessionStorage.setItem('id', response.data.user._id);
               sessionStorage.setItem('name', response.data.user.firstname);
               sessionStorage.setItem('email', response.data.user.email);
+              sessionStorage.setItem('checkbox', response.data.user.usertype);
               sessionStorage.setItem('token', response.data.token);
               setLoading(false);
               window.location.replace('/homeadmin');
@@ -134,7 +135,7 @@ const LoginAdmin = () => {
         </SectionForm>
       </Form>
       <Image>
-        <img src={Imagens} />
+        <img src={Imagens} alt="Homem desenhando no quadro, estatisticas" />
       </Image>
     </DivGeral>
   );

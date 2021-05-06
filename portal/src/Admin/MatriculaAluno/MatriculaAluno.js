@@ -101,7 +101,9 @@ const MatriculaAluno = () => {
     <div>
       <Header />
       <DivVoltar>
-        <Link to="/homeadmin">Voltar</Link>
+        <Link to="/homeadmin">
+          <p> Voltar</p>
+        </Link>
         <Form onSubmit={handleSubmit}>
           <input
             value={cpf}
