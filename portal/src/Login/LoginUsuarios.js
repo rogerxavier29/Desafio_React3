@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Imagens from '../Imagens/undraw_environmental_study_skau 1.svg';
-import { FaSpinner } from 'react-icons/fa';
 import axios from 'axios';
 
 import { DivGeral, Image, Titulo, DivSenha, BotaoCarregando } from './styles';
@@ -83,7 +82,7 @@ const LoginUsuarios = () => {
             sessionStorage.setItem('checkbox', response.data.user.usertype);
             sessionStorage.setItem('token', response.data.token);
             setLoading(false);
-            window.location.replace('/homealuno');
+            window.location.replace('/homeusuario');
           }
         },
         (erro) => {
@@ -179,7 +178,7 @@ const LoginUsuarios = () => {
         </div>
       </form>
       <Image>
-        <img src={Imagens} />
+        <img src={Imagens} alt="Homem andando com menus a volta" />
       </Image>
     </DivGeral>
   );
