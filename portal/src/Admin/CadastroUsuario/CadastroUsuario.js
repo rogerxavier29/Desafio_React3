@@ -132,7 +132,7 @@ const CadastroUsuario = () => {
     password: senha,
   };
 
-  const url = `https://projetoportal.herokuapp.com/users/`;
+  const url = `https://projetoportal.herokuapp.com/users`;
 
   function handleSubmit(event) {
     event.preventDefault();
