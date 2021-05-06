@@ -17,6 +17,13 @@ const styles = {
 const Header = () => {
   const [openModal, setOpenModal] = useState(false);
 
+  const usertype = sessionStorage.getItem('checkbox');
+
+  function Sair() {
+    sessionStorage.clear();
+    window.location.href = '/';
+  }
+
   return (
     <Cabeçalho>
       <ul>
@@ -24,7 +31,7 @@ const Header = () => {
           Bem-vindo, <span>{sessionStorage.getItem('name')}</span>
         </LiNome>
         <LiImg>
-          <img src={Imagens} />
+          <img src={Imagens} alt="foto do usuario arredondada" />
           <ul>
             <Modal
               isOpen={openModal}
@@ -36,7 +43,17 @@ const Header = () => {
             </Modal>
             <li onClick={() => setOpenModal(true)}>Meus Dados</li>
             <li>
-              <a href="/Loginadmin"> Sair</a>
+              {usertype === 1 ? (
+                <a onClick={Sair} href="/loginadmin">
+                  {' '}
+                  Sair
+                </a>
+              ) : (
+                <a onClick={Sair} href="/loginusuarios">
+                  {' '}
+                  Sair
+                </a>
+              )}
             </li>
           </ul>
         </LiImg>
