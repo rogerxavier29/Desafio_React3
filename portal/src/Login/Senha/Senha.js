@@ -175,7 +175,7 @@ const Senha = () => {
         </div>
       </Form>
       <Imagem>
-        <img src={Imagens} alt="" />
+        <img src={Imagens} alt="Homem andando com menus a volta" />
       </Imagem>
     </DivGeral>
   );
