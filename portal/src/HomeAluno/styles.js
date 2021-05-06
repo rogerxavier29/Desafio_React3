@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+<style>
+  @import
+  url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+</style>;
+
 export const DivGeral = styled.div`
   height: 100vh;
   width: 100%;
@@ -8,6 +13,7 @@ export const DivGeral = styled.div`
 
 export const Titulo = styled.h1`
   margin: 30px;
+  font-family: 'Nunito', sans-serif;
 `;
 
 export const Section1 = styled.section`
@@ -31,12 +37,14 @@ export const Section1 = styled.section`
       font-style: none;
       text-decoration: none;
       color: black;
+      font-family: 'Nunito', sans-serif;
     }
     span {
       margin: 10px;
       color: gray;
       text-transform: uppercase;
       font-size: 12px;
+      font-family: 'Nunito', sans-serif;
     }
   }
 `;
