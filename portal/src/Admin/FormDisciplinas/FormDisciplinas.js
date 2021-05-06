@@ -56,7 +56,7 @@ const FormDisciplinas = () => {
           required
         />
         <input
-          type="number"
+          type="text"
           placeholder="Quantidade de Alunos"
           value={quantAlunos}
           onChange={(event) => setQuantAlunos(event.target.value)}
