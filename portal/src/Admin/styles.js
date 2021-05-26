@@ -31,6 +31,7 @@ export const Form = styled.form`
   justify-self: center;
   background: #ffff;
   z-index: 10;
+  border-radius: 4px;
 
   @media (max-width: 768px) {
     width: 400px;
@@ -90,7 +91,7 @@ export const Image = styled.div`
   justify-items: end;
   margin-left: 75%;
   position: absolute;
-  margin-top: 345px;
+  margin-top: 328px;
 
   @media (max-width: 768px) {
     margin-top: 480px;
