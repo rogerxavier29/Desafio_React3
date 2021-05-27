@@ -56,7 +56,7 @@ const NotaConteudo = (props) => {
     <DivGeral>
       <Header />
       <Linky>
-        <Link to="/homealuno">
+        <Link to="/homeusuario">
           <span>Voltar</span>
         </Link>
       </Linky>
