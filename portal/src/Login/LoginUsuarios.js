@@ -100,7 +100,7 @@ const LoginUsuarios = () => {
               sessionStorage.setItem('email', response.data.user.email);
               sessionStorage.setItem('checkbox', response.data.user.usertype);
               sessionStorage.setItem('token', response.data.token);
-              window.location.replace('/homealuno');
+              window.location.replace('/homeusuario');
             }
           },
           (erro) => {
