@@ -23,6 +23,10 @@ export const Titulo = styled.h3`
     font-size: 25px;
     margin-top: 20px;
   }
+
+  @media (max-width: 600px) {
+    font-size: 20px;
+  }
 `;
 
 export const Form = styled.form`
@@ -37,6 +41,11 @@ export const Form = styled.form`
     width: 400px;
     height: 280px;
     margin-top: -150px;
+  }
+
+  @media (max-width: 600px) {
+    width: 290px;
+    height: 280px;
   }
 `;
 
@@ -53,6 +62,10 @@ export const SectionForm = styled.section`
     @media (max-width: 768px) {
       width: 250px;
       height: 28px;
+    }
+
+    @media (max-width: 600px) {
+      width: 230px;
     }
   }
   span {
@@ -73,6 +86,10 @@ export const SectionForm = styled.section`
       height: 30px;
       margin-top: 20px;
     }
+
+    @media (max-width: 600px) {
+      width: 230px;
+    }
   }
 `;
 
@@ -85,24 +102,37 @@ export const EsquecSenha = styled.div`
   @media (max-width: 768px) {
     font-size: 12px;
   }
+
+  @media (max-width: 600px) {
+    font-size: 11px;
+  }
 `;
 
 export const Image = styled.div`
   justify-items: end;
   margin-left: 75%;
   position: absolute;
-  margin-top: 328px;
+  margin-top: 345px;
 
   @media (max-width: 768px) {
-    margin-top: 480px;
-    margin-left: 430px;
+    margin-top: 344px;
+    margin-left: 473px;
+  }
+
+  @media (max-width: 600px) {
+    margin-top: 384px;
+    margin-left: 127px;
   }
 
   img {
     max-height: 260px;
 
     @media (max-width: 768px) {
-      max-height: 260px;
+      max-height: 240px;
+    }
+
+    @media (max-width: 600px) {
+      max-height: 200px;
     }
   }
 `;
